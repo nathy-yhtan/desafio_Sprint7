@@ -1,0 +1,31 @@
+<table class="mt-2 table">
+    <thead>
+        <tr>
+            <th class="p-3">VIN</th>
+            <th class="p-3">ODÔMETRO</th>
+            <th class="p-3">NÍVEL DO COMBUSTÍVEL</th>
+            <th class="p-3">STATUS</th>
+            <th class="p-3">LAT</th>
+            <th class="p-3">LONG</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="d-flex">
+                <input (change)="onChangeVin($event)" type="text" placeholder="{{ vin }}" value="{{ vin }}">
+                <button class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </button>
+            </td>
+            <td class="p-3">{{odometro}}Km</td>
+            <td class="p-3">{{nivelCombustivel}}%</td>
+            <td class="p-3">{{status}}</td>
+            <td class="p-3">{{lat}}</td>
+            <td class="p-3">{{long}}</td>
+        </tr>
+    </tbody>
+</table>

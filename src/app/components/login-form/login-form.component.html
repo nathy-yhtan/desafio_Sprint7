@@ -1,0 +1,26 @@
+<div class="tudo">
+  <div class="fundo-pagina">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="shadow border border-dark p-3 rounded-3">
+
+      <img src="/img/ford.png" alt="logo-ford">
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Usuário</label>
+        <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp" required="">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Senha</label>
+        <input formControlName="senha" type="password" class="form-control" id="exampleInputPassword1" required="">
+      </div>
+
+      <p>Ao logar, você concorda com os <a href="https://www.ford.com.br/politica-de-privacidade/"
+          target="_blank">Termos
+          e
+          Condições</a>.</p>
+
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+  </div>
+</div>
