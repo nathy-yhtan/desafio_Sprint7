@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  isMenuAberto: boolean = false;
+
   constructor(private router: Router) {}
 
   goToDashboard() {

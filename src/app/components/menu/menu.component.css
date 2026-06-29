@@ -1,33 +1,55 @@
-/* Container do Cartão */
-.cartao-sistema {
-    width: 100%;
-    max-width: 480px; /* Controla a largura máxima do cartão */
-    background-color: rgba(255, 255, 255, 0.75); /* Fundo branco semi-transparente */
-    border: 1px solid #999999; /* Borda cinza fina idêntica à imagem */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra suave para dar profundidade */
+/* Botão do menu fixado no topo esquerdo */
+.botao-menu-fixo {
+    position: fixed;            /* Fixa o botão na tela mesmo se houver rolagem */
+    top: 20px;                  /* Distância do topo da página */
+    left: 20px;                 /* Distância da esquerda da página */
+    z-index: 1050;              /* Garante que o botão fique acima do fundo e do cartão */
+    
+    /* Estilização visual (Design moderno semi-transparente) */
     display: flex;
-    flex-direction: column;
-}
-
-/* Faixa superior cinza do cartão */
-.cartao-topo {
-    padding: 10px 15px;
-    font-size: 0.85rem;
-    color: #444444;
-    border-bottom: 1px solid #cccccc; /* Linha divisória interna */
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fundo branco combinando com o cartão */
+    color: #1c1b1f;             /* Cor do texto e do ícone */
+    border: 1px solid #cccccc;  /* Borda cinza sutil */
+    border-radius: 4px;         /* Cantos levemente arredondados */
+    cursor: pointer;
     font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
 }
 
-/* Área interna do conteúdo */
-.cartao-corpo {
-    padding: 40px 30px; /* Bastante espaçamento interno */
-    text-align: left; /* Alinhamento à esquerda igual ao modelo */
+/* Efeito ao passar o mouse (Hover) */
+.botao-menu-fixo:hover {
+    background-color: #002c5f;  /* Muda para o azul Ford clássico */
+    color: #ffffff;             /* Texto e ícone mudam para branco */
+    border-color: #002c5f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px); /* Leve efeito de subir ao passar o mouse */
 }
 
-/* Estilo do texto de boas-vindas azul */
-.cartao-corpo h2 {
-    color: #0076ce; /* Tom de azul destacado da imagem */
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin: 0;
+/* Ajuste do tamanho do ícone SVG dentro do botão */
+.botao-menu-fixo svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+/* Pequena animação do ícone quando o botão é pressionado */
+.botao-menu-fixo:active {
+    transform: translateY(1px);
+}
+
+/* Esconde o botão do menu quando a barra da esquerda abrir */
+.offcanvas-start.show ~ .botao-menu-fixo {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+/* Força o botão a sumir instantaneamente no momento em que o menu começa a abrir */
+.offcanvas.toggling ~ .botao-menu-fixo,
+.offcanvas.show ~ .botao-menu-fixo {
+    display: none !important;
 }
