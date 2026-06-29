@@ -24,10 +24,6 @@
     text-align: left; /* Alinhamento à esquerda igual ao modelo */
 }
 
-/* Estilo do texto de boas-vindas azul */
-.cartao-corpo h2 {
-    color: #0076ce; /* Tom de azul destacado da imagem */
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin: 0;
+h1 {
+    color: #0076ce;
 }

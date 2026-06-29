@@ -1,15 +1,11 @@
 <div class="tudo">
 
     <!--menu-->
-    <button class="botao-menu-fixo" 
-            type="button" 
-            data-bs-toggle="offcanvas" 
-            data-bs-target="#offcanvasExample" 
-            aria-controls="offcanvasExample"
-            [style.display]="isMenuAberto ? 'none' : 'flex'"
-            (click)="isMenuAberto = true">
+    <button class="botao-menu-fixo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample" [style.display]="isMenuAberto ? 'none' : 'flex'" (click)="isMenuAberto = true">
         <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
         </svg>
         <span>Menu</span>
     </button>
@@ -17,8 +13,9 @@
     <!--abriu menu-->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ford Enter</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="isMenuAberto = false"></button>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Home</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                (click)="isMenuAberto = false"></button>
         </div>
         <div class="offcanvas-body">
             <div class="d-grid gap-2">
