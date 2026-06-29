@@ -1,0 +1,33 @@
+/* Container do Cartão */
+.cartao-sistema {
+    width: 100%;
+    max-width: 480px; /* Controla a largura máxima do cartão */
+    background-color: rgba(255, 255, 255, 0.75); /* Fundo branco semi-transparente */
+    border: 1px solid #999999; /* Borda cinza fina idêntica à imagem */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra suave para dar profundidade */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Faixa superior cinza do cartão */
+.cartao-topo {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    color: #444444;
+    border-bottom: 1px solid #cccccc; /* Linha divisória interna */
+    font-weight: 500;
+}
+
+/* Área interna do conteúdo */
+.cartao-corpo {
+    padding: 40px 30px; /* Bastante espaçamento interno */
+    text-align: left; /* Alinhamento à esquerda igual ao modelo */
+}
+
+/* Estilo do texto de boas-vindas azul */
+.cartao-corpo h2 {
+    color: #0076ce; /* Tom de azul destacado da imagem */
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0;
+}

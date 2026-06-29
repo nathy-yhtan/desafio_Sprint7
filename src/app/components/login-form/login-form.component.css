@@ -1,17 +1,22 @@
-.tudo{
-    min-height: 100vh;         /* Ocupa toda a altura da tela */
-    width: 100vw;              /* Ocupa toda a largura da tela */
-    display: flex;             /* Ativa flexbox para alinhar o form */
-    justify-content: center;   /* Centraliza o formulário horizontalmente */
-    align-items: center;       /* Centraliza o formulário verticalmente */
-    position: absolute;        /* Garante que cubra possíveis vazamentos de margem */
+@import url('https://googleapis.com');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tudo {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: aquamarine;
-}
-.fundo-pagina{
-    background-color: #002c5f;
-    color: aliceblue;
+    background-image: url('/img/desenho-cenario-ford.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 form {
@@ -22,14 +27,20 @@ form {
     text-align: center;
     max-width: 460px;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff; 
 }
 
-img {
-    width: 50%;
-    height: 50%;
+form a {
+    color: #3498db; 
 }
 
 form img {
     display: block;
     margin: 0 auto 20px auto;
+}
+
+img {
+    width: 50%;
+    height: 50%;
 }
