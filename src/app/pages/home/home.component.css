@@ -4,6 +4,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.tudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('/img/ranger.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* botao menu */
 :host {
     display: flex;
     flex-direction: column;
@@ -13,10 +26,83 @@
     gap: 15px;
 }
 
+.botao-menu-fixo {
+    /* fixar botao */
+    top: 20px;
+    left: 20px;
+    z-index: 1050;
+    /*estilizando*/
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botao-menu-fixo:hover {
+    background-color: #002c5f;
+    color: #ffffff;
+    border-color: #002c5f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+img {
+    max-width: 120px;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #002c5f;
+    border-color: rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    max-width: 480px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0d6efd
+}
+
 button.btn-danger {
     order: 2;
     margin-top: 10px;
     max-width: 480px;
     padding: 10px;
     font-weight: 500;
+}
+
+/* card */
+.cartao-sistema {
+    width: 440px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid #999999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-topo {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    color: #444444;
+    border-bottom: 1px solid #cccccc;
+    font-weight: 500;
+}
+
+.cartao-corpo {
+    padding: 40px 30px;
+    text-align: left;
+}
+
+h1 {
+    color: #0d6efd;
 }
