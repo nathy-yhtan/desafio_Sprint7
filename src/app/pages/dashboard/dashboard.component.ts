@@ -51,25 +51,25 @@ export class DashboardComponent implements OnInit {
   }
 
   onChangeSelect(event: Event) {
-  const id = Number((event.target as HTMLSelectElement).value)
-  const veiculo = this.veiculos.find((veiculo) => veiculo.id === id)
+    const id = Number((event.target as HTMLSelectElement).value)
+    const veiculo = this.veiculos.find((veiculo) => veiculo.id === id)
 
-  if (veiculo) {
-    this.veiculoSelecionado = veiculo
+    if (veiculo) {
+      this.veiculoSelecionado = veiculo
+    }
+
+    //ADICIONADO PELA LIVE
+    this.dashboardService.getVinInfos(this.veiculoSelecionado.vin).subscribe({
+
+      error: () => { },
+      next: (vinInfos) => {
+        this.vinInfos = vinInfos //this.vinInfos
+      }
+    })
   }
 
-  //ADICIONADO PELA LIVE
-  this.dashboardService.getVinInfos(this.veiculoSelecionado.vin).subscribe({
-    
-      error: () => {},
-      next: (vinInfos) => {
-            this.vinInfos = this.vinInfos
-          }
-  })
-}
+  onChangeVin() {
 
-onChangeVin() {
-
-}
+  }
 
 }

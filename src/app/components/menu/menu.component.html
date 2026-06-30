@@ -2,7 +2,7 @@
 
     <!--menu-->
     <button class="botao-menu-fixo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample" [style.display]="isMenuAberto ? 'none' : 'flex'" (click)="isMenuAberto = true">
+        aria-controls="offcanvasExample" [style.display]="'flex'" (click)="isMenuAberto = true">
         <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -20,9 +20,10 @@
         </div>
         <div class="offcanvas-body">
             <div class="d-grid gap-2">
-                <button class="btn btn-primary text-start" (click)="goToDashboard()">
-                    📊 Dashboard
+                <button class="btn btn-primary" (click)="goToDashboard()">
+                    Dashboard
                 </button>
+                <button (click)="logout()" class="btn btn-danger">Sair</button>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
 
 .botao-menu-fixo {
     /*fixar botao*/
-    position: fixed;
+    /* position: fixed; */
     top: 20px;
     left: 20px;
     z-index: 1050;
@@ -22,7 +22,7 @@
     font-weight: 500;
     font-size: 0.95rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    transition: all 0.2s ease-in-out;
+    /* transition: all 0.2s ease-in-out; */
 }
 
 .botao-menu-fixo:hover {
@@ -33,33 +33,32 @@
     transform: translateY(-1px);
 }
 
-.botao-menu-fixo:active {
+/* .botao-menu-fixo:active {
     transform: translateY(1px);
-}
+} */
 
 img {
     max-width: 120px;
     padding: 10px;
 }
 
-/*esconder botao*/
-.offcanvas-start.show~.botao-menu-fixo {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-/*sumir botao*/
-.offcanvas.toggling~.botao-menu-fixo,
-.offcanvas.show~.botao-menu-fixo {
-    display: none !important;
-}
-
 .btn-primary {
     background-color: #002c5f;
     border-color: rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    max-width: 480px;
+    padding: 10px;
+    font-weight: 500;
 }
 
 .btn-primary:hover {
     background-color: #0d6efd
+}
+
+button.btn-danger {
+    order: 2;
+    margin-top: 10px;
+    max-width: 480px;
+    padding: 10px;
+    font-weight: 500;
 }

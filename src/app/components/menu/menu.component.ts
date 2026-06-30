@@ -14,4 +14,9 @@ export class MenuComponent {
   goToDashboard() {
     this.router.navigate(['/dashboard']);
   }
+
+  logout() {
+    sessionStorage.clear()
+    this.router.navigate([""])
+  }
 }
