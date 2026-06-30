@@ -1,19 +1,23 @@
-/* Botão do menu fixado no topo esquerdo */
+@import url('https://googleapis.com');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .botao-menu-fixo {
-    position: fixed;            /* Fixa o botão na tela mesmo se houver rolagem */
-    top: 20px;                  /* Distância do topo da página */
-    left: 20px;                 /* Distância da esquerda da página */
-    z-index: 1050;              /* Garante que o botão fique acima do fundo e do cartão */
-    
-    /* Estilização visual (Design moderno semi-transparente) */
+    /*fixar botao*/
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1050;
+    /*estilizando*/
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 10px 16px;
-    background-color: rgba(255, 255, 255, 0.85); /* Fundo branco combinando com o cartão */
-    color: #1c1b1f;             /* Cor do texto e do ícone */
-    border: 1px solid #cccccc;  /* Borda cinza sutil */
-    border-radius: 4px;         /* Cantos levemente arredondados */
+    background-color: #002c5f;
+    color: #fff;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
     font-size: 0.95rem;
@@ -21,35 +25,41 @@
     transition: all 0.2s ease-in-out;
 }
 
-/* Efeito ao passar o mouse (Hover) */
 .botao-menu-fixo:hover {
-    background-color: #002c5f;  /* Muda para o azul Ford clássico */
-    color: #ffffff;             /* Texto e ícone mudam para branco */
-    border-color: #002c5f;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border-color: #0d6efd;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transform: translateY(-1px); /* Leve efeito de subir ao passar o mouse */
+    transform: translateY(-1px);
 }
 
-/* Ajuste do tamanho do ícone SVG dentro do botão */
-.botao-menu-fixo svg {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.2s ease;
-}
-
-/* Pequena animação do ícone quando o botão é pressionado */
 .botao-menu-fixo:active {
     transform: translateY(1px);
 }
 
-/* Esconde o botão do menu quando a barra da esquerda abrir */
-.offcanvas-start.show ~ .botao-menu-fixo {
+img {
+    max-width: 120px;
+    padding: 10px;
+}
+
+/*esconder botao*/
+.offcanvas-start.show~.botao-menu-fixo {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-/* Força o botão a sumir instantaneamente no momento em que o menu começa a abrir */
-.offcanvas.toggling ~ .botao-menu-fixo,
-.offcanvas.show ~ .botao-menu-fixo {
+
+/*sumir botao*/
+.offcanvas.toggling~.botao-menu-fixo,
+.offcanvas.show~.botao-menu-fixo {
     display: none !important;
+}
+
+.btn-primary {
+    background-color: #002c5f;
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #0d6efd
 }

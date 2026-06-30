@@ -1,3 +1,9 @@
+@import url('https://googleapis.com');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 :host {
     display: flex;
     flex-direction: column;
