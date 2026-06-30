@@ -6,7 +6,6 @@
 
 .botao-menu-fixo {
     /*fixar botao*/
-    /* position: fixed; */
     top: 20px;
     left: 20px;
     z-index: 1050;
@@ -22,7 +21,6 @@
     font-weight: 500;
     font-size: 0.95rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    /* transition: all 0.2s ease-in-out; */
 }
 
 .botao-menu-fixo:hover {
@@ -32,10 +30,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     transform: translateY(-1px);
 }
-
-/* .botao-menu-fixo:active {
-    transform: translateY(1px);
-} */
 
 img {
     max-width: 120px;

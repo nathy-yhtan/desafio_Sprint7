@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-  isMenuAberto: boolean = false;
+  isMenuAberto = false;
 
   constructor(private router: Router) {}
 
