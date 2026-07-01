@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
           this.veiculoSelecionado = this.veiculos[0];
         }
 
-        //^fora da live, mas agora vou adicionar coisas dela
+        //^buscas
 
         this.dashboardService.getVinInfos(this.veiculoSelecionado.vin).subscribe({
 
@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
       this.veiculoSelecionado = veiculo
     }
 
-    //ADICIONADO PELA LIVE
+    //adicionando
     this.dashboardService.getVinInfos(this.veiculoSelecionado.vin).subscribe({
 
       error: () => { },

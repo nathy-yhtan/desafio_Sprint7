@@ -1,5 +1,5 @@
 <header>
-    <div> <!--TIRAR DIV CASO PRECISE-->
+    <div>
 
         <!--menu-->
         <button class="botao-menu-fixo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -33,9 +33,10 @@
     </div>
 </header>
 
-<section class="d-flex gap-3 justify-content-around rounded-2">
-    <div class="shadow border border-black p-3">
-        <h2>Veículos</h2>
+<section class="d-flex gap-3 justify-content-around">
+
+    <div class="shadow border border-primary p-3 rounded-3">
+        <h2>Veículos</h2> <!--onde seleciona os carros-->
         <select (change)="onChangeSelect($event)">
             @for (v of veiculos; track v.id) {
             <option value="{{v.id}}">{{v.vehicle}}</option>
@@ -43,14 +44,22 @@
         </select>
     </div>
 
-    <app-card [titulo]=" 'Total de Vendas' " [valor]="veiculoSelecionado.volumetotal" />
+    <app-card [titulo]=" 'Total de Vendas' " [valor]="veiculoSelecionado.volumetotal" /> <!--os 3 cards de cima-->
+    <!--o bootstrap ta em card-->
     <app-card [titulo]=" 'Conectados' " [valor]="veiculoSelecionado.connected" />
-    <app-card [titulo]=" 'Upd. Softwaer' " [valor]="veiculoSelecionado.softwareUpdates" />
+    <app-card [titulo]=" 'Upd. Software' " [valor]="veiculoSelecionado.softwareUpdates" />
+
 </section>
-<section>
+
+<section> <!--a imagem do carro que vai mudando-->
     <img src="{{ veiculoSelecionado.img }}" alt="carro-ford">
 </section>
-<section>
-    <app-car-table [vin]="veiculoSelecionado.vin" [lat]="vinInfos.lat" [long]="vinInfos.long"
-        [nivelCombustivel]="vinInfos.nivelCombustivel" [odometro]="vinInfos.odometro" [status]="vinInfos.status" />
-</section>
+
+<footer>
+
+    <section> <!--a parte de baixo-->
+        <app-car-table [vin]="veiculoSelecionado.vin" [lat]="vinInfos.lat" [long]="vinInfos.long"
+            [nivelCombustivel]="vinInfos.nivelCombustivel" [odometro]="vinInfos.odometro" [status]="vinInfos.status" />
+    </section>
+
+</footer>

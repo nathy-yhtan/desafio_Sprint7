@@ -1,0 +1,14 @@
+@import url('https://googleapis.com');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: #002c5f;
+    font-weight: 600;
+}
+
+p {
+    font-size: x-large;
+}
