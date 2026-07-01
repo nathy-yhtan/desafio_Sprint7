@@ -3,10 +3,11 @@ import { CardComponent } from "../../components/card/card.component";
 import { CarTableComponent } from "../../components/car-table/car-table.component";
 import { DashboardService } from '../../services/dashboard.service';
 import { Veiculo, VinInfos } from '../../models/car';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CardComponent, CarTableComponent],
+  imports: [CardComponent, CarTableComponent, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -23,6 +24,23 @@ export class DashboardComponent implements OnInit {
     vehicle: "",
     img: "",
     vin: "",
+  }
+
+  isMenuAberto = false;
+
+  constructor(private router: Router) { }
+
+  goToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
+  logout() {
+    sessionStorage.clear()
+    this.router.navigate([""])
   }
 
   vinInfos: VinInfos = { id: -1, lat: 0, long: 0, nivelCombustivel: 0, odometro: 0, status: "" }

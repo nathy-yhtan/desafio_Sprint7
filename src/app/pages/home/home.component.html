@@ -19,16 +19,15 @@
             aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <img src="/img/ford.png" alt="logo-ford">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Home</h5>
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
                     (click)="isMenuAberto = false"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" (click)="goToDashboard()">
-                        Dashboard
-                    </button>
-                    <button (click)="logout()" class="btn btn-danger">Sair</button>
+                    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+                    <button class="btn btn-primary" (click)="goToDashboard()">Dashboard</button>
+                    <button class="btn btn-danger" (click)="logout()">Sair</button>
                 </div>
             </div>
         </div>

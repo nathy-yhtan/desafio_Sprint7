@@ -10,10 +10,14 @@ export class HomeComponent {
 
   isMenuAberto = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToDashboard() {
     this.router.navigate(['/dashboard']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
   }
 
   logout() {
