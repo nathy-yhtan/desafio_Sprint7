@@ -1,65 +1,68 @@
 <header>
     <div>
-
         <!--menu-->
         <button class="botao-menu-fixo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample" [style.display]="'flex'" (click)="isMenuAberto = true">
-            <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-list"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
             </svg>
             <span>Menu</span>
         </button>
 
         <!--abriu menu-->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-            aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-                <img class="menu-img" src="/img/ford.png" alt="logo-ford">
+                <img class="menu-img" src="/img/ford.png" alt="logo-ford" style="max-width: 120px; height: auto;">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
-                    (click)="isMenuAberto = false"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="isMenuAberto = false"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" (click)="goToHome()">Home</button>
-                    <button class="btn btn-primary" (click)="goToDashboard()">Dashboard</button>
-                    <button class="btn btn-danger" (click)="logout()">Sair</button>
+                    <button class="btn btn-primary w-100" (click)="goToHome()">Home</button>
+                    <button class="btn btn-primary w-100" (click)="goToDashboard()">Dashboard</button>
+                    <button class="btn btn-danger w-100" (click)="logout()">Sair</button>
                 </div>
             </div>
         </div>
-
     </div>
 </header>
 
-<section class="d-flex gap-3 justify-content-around">
+<div class="dashboard-wrapper container-fluid">
 
-    <div class="shadow border border-primary p-3 rounded-3">
-        <h2>Veículos</h2> <!--onde seleciona os carros-->
-        <select (change)="onChangeSelect($event)">
-            @for (v of veiculos; track v.id) {
-            <option value="{{v.id}}">{{v.vehicle}}</option>
-            }
-        </select>
-    </div>
+    <section class="row g-3 justify-content-center mb-4">
+        
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="shadow border border-primary p-3 rounded-3 h-100 bg-white d-flex flex-column justify-content-center">
+                <h2 class="fs-5 mb-2 fw-bold text-secondary">Veículos</h2>
+                <select class="form-select w-100" (change)="onChangeSelect($event)">
+                    @for (v of veiculos; track v.id) {
+                    <option value="{{v.id}}">{{v.vehicle}}</option>
+                    }
+                </select>
+            </div>
+        </div>
 
-    <app-card [titulo]=" 'Total de Vendas' " [valor]="veiculoSelecionado.volumetotal" /> <!--os 3 cards de cima-->
-    <!--o bootstrap ta em card-->
-    <app-card [titulo]=" 'Conectados' " [valor]="veiculoSelecionado.connected" />
-    <app-card [titulo]=" 'Upd. Software' " [valor]="veiculoSelecionado.softwareUpdates" />
+        <div class="col-12 col-sm-6 col-lg-3">
+            <app-card class="h-100" [titulo]="'Total de Vendas'" [valor]="veiculoSelecionado.volumetotal" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <app-card class="h-100" [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <app-card class="h-100" [titulo]="'Upd. Software'" [valor]="veiculoSelecionado.softwareUpdates" />
+        </div>
 
-</section>
-
-<section> <!--a imagem do carro que vai mudando-->
-    <img src="{{ veiculoSelecionado.img }}" alt="carro-ford">
-</section>
-
-<footer>
-
-    <section> <!--a parte de baixo-->
-        <app-car-table [vin]="veiculoSelecionado.vin" [lat]="vinInfos.lat" [long]="vinInfos.long"
-            [nivelCombustivel]="vinInfos.nivelCombustivel" [odometro]="vinInfos.odometro" [status]="vinInfos.status" />
     </section>
 
-</footer>
+    <section class="text-center my-4 image-container"> 
+        <img class="img-fluida-carro" src="{{ veiculoSelecionado.img }}" alt="carro-ford">
+    </section>
+
+    <footer class="w-100 px-1">
+        <section>
+            <app-car-table [vin]="veiculoSelecionado.vin" [lat]="vinInfos.lat" [long]="vinInfos.long"
+                [nivelCombustivel]="vinInfos.nivelCombustivel" [odometro]="vinInfos.odometro" [status]="vinInfos.status" />
+        </section>
+    </footer>
+
+</div>

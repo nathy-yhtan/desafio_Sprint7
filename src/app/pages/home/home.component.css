@@ -26,34 +26,37 @@
     gap: 15px;
 }
 
+/* Botão Menu Fixo Centralizado no Topo */
 .botao-menu-fixo {
-    /* fixar botao */
+    position: absolute;
     top: 20px;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Garante o alinhamento perfeito baseado no centro do botão */
     z-index: 1050;
-    /*estilizando*/
+    
+    /* Estilizando */
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 10px 16px;
     background-color: #0d6efd;
     color: #fff;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
     font-size: 0.95rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
 }
 
 .botao-menu-fixo:hover {
     background-color: #002c5f;
     color: #ffffff;
-    border-color: #002c5f;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transform: translateY(-1px);
 }
 
-img {
+.menu-img {
     max-width: 120px;
     padding: 10px;
 }
@@ -105,4 +108,51 @@ button.btn-danger {
 
 h1 {
     color: #0d6efd;
+}
+
+/* responsividade */
+@media (max-width: 480px) {
+    :host {
+        width: 100% !important;
+        min-width: 100% !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tudo {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        padding: 85px 16px 20px 16px;
+        justify-content: flex-start; 
+        align-items: center;
+        
+        background-position: bottom center; 
+        background-size: 70% auto; 
+    }
+
+    .botao-menu-fixo {
+        top: 15px;
+        left: 16px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .cartao-sistema {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto; 
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.92); 
+    }
+
+    .cartao-corpo {
+        padding: 25px 20px; 
+    }
+
+    h1 {
+        font-size: 1.35rem;
+    }
 }

@@ -1,38 +1,35 @@
 <div class="tudo">
 
 
+    <header>
     <div>
-
         <!--menu-->
         <button class="botao-menu-fixo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample" [style.display]="'flex'" (click)="isMenuAberto = true">
-            <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-list"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
             </svg>
             <span>Menu</span>
         </button>
 
         <!--abriu menu-->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-            aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-                <img src="/img/ford.png" alt="logo-ford">
+                <img class="menu-img" src="/img/ford.png" alt="logo-ford" style="max-width: 120px; height: auto;">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
-                    (click)="isMenuAberto = false"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="isMenuAberto = false"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" (click)="goToHome()">Home</button>
-                    <button class="btn btn-primary" (click)="goToDashboard()">Dashboard</button>
-                    <button class="btn btn-danger" (click)="logout()">Sair</button>
+                    <button class="btn btn-primary w-100" (click)="goToHome()">Home</button>
+                    <button class="btn btn-primary w-100" (click)="goToDashboard()">Dashboard</button>
+                    <button class="btn btn-danger w-100" (click)="logout()">Sair</button>
                 </div>
             </div>
         </div>
-
     </div>
+</header>
+
 
     <div>
 
