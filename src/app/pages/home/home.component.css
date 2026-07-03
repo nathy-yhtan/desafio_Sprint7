@@ -32,7 +32,6 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%); /* Garante o alinhamento perfeito baseado no centro do botão */
-    z-index: 1050;
     
     /* Estilizando */
     display: flex;
